@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>D&amp;D 5E Tools: Attribute Point-Buy Calculator</title>
+        <meta name="description" content="A point-buy calculator for Dungeons and Dragons 5th Edition">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/point-buy.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <h2>Attribute Point-Buy Calculator</h2>
+  
+        <form id="form-point-buy-calc">
+        <div id="content">
+        <div id="total-points-field">
+            <label>Available: </label><div id="points-available-div"></div>
+            <label>Remaining: </label><input id="points-remaining-field" type="text" value="27" readonly>
+        </div>
+        <table id="point-buy-table">
+            <tr class="attribute-headers">
+                <th>&nbsp;</th>
+                <th>Base</th>
+                <th>&nbsp;</th>
+                <th>Racial<br>Adj.</th>
+                <th>&nbsp;</th>
+                <th>Score</th>
+                <th>Mod.</th>
+                <th>&nbsp;</th>
+                <th>Cost</th>
+            </tr>
+            <tr id="str" class="attribute-row">
+                <th>STR</th>
+                <td id="str-attribute-base" class="attribute-base"></td>
+                <td class="operator">+</td>
+                <td id="str-racial-modifier" class="racial-modifier"></td>
+                <td class="operator">=</td>
+                <td id="str-attribute-score" class="attribute-score"></td>
+                <td id="str-attribute-modifier" class="attribute-modifier"></td>
+                <td>&nbsp;</td>
+                <td id="str-attribute-cost" class="attribute-cost"></td>
+            </tr>
+            <tr id="dex" class="attribute-row">
+                <th>DEX</th>
+                <td id="dex-attribute-base" class="attribute-base"></td>
+                <td class="operator">+</td>
+                <td id="dex-racial-modifier" class="racial-modifier"></td>
+                <td class="operator">=</td>
+                <td id="dex-attribute-score" class="attribute-score"></td>
+                <td id="dex-attribute-modifier" class="attribute-modifier"></td>
+                <td>&nbsp;</td>
+                <td id="dex-attribute-cost" class="attribute-cost"></td>
+            </tr>
+            <tr id="con" class="attribute-row">
+                <th>CON</th>
+                <td id="con-attribute-base" class="attribute-base"></td>
+                <td class="operator">+</td>
+                <td id="con-racial-modifier" class="racial-modifier"></td>
+                <td class="operator">=</td>
+                <td id="con-attribute-score" class="attribute-score"></td>
+                <td id="con-attribute-modifier" class="attribute-modifier"></td>
+                <td>&nbsp;</td>
+                <td id="con-attribute-cost" class="attribute-cost"></td>
+            </tr>
+            <tr id="int" class="attribute-row">
+                <th>INT</th>
+                <td id="int-attribute-base" class="attribute-base"></td>
+                <td class="operator">+</td>
+                <td id="int-racial-modifier" class="racial-modifier"></td>
+                <td class="operator">=</td>
+                <td id="int-attribute-score" class="attribute-score"></td>
+                <td id="int-attribute-modifier" class="attribute-modifier"></td>
+                <td>&nbsp;</td>
+                <td id="int-attribute-cost" class="attribute-cost"></td>
+            </tr>
+            <tr id="wis" class="attribute-row">
+                <th>WIS</th>
+                <td id="wis-attribute-base" class="attribute-base"></td>
+                <td class="operator">+</td>
+                <td id="wis-racial-modifier" class="racial-modifier"></td>
+                <td class="operator">=</td>
+                <td id="wis-attribute-score" class="attribute-score"></td>
+                <td id="wis-attribute-modifier" class="attribute-modifier"></td>
+                <td>&nbsp;</td>
+                <td id="wis-attribute-cost" class="attribute-cost"></td>
+            </tr>
+            <tr id="cha" class="attribute-row">
+                <th>CHA</th>
+                <td id="cha-attribute-base" class="attribute-base"></td>
+                <td class="operator">+</td>
+                <td id="cha-racial-modifier" class="racial-modifier"></td>
+                <td class="operator">=</td>
+                <td id="cha-attribute-score" class="attribute-score"></td>
+                <td id="cha-attribute-modifier" class="attribute-modifier"></td>
+                <td>&nbsp;</td>
+                <td id="cha-attribute-cost" class="attribute-cost"></td>
+            </tr>
+        </table>
+        <table id="race-table">
+            <tr>
+            <th id="race-label-cell">Race:</th>
+            <td id="race-field-cell"><select id="race-field">
+                <option value="aarakocra">Aarakocra</option>
+                <option value="aasimar">Aasimar</option>
+                <option value="aasimarFallen">Aasimar, Fallen</option>
+                <option value="aasimarProtector">Aasimar, Protector</option>
+                <option value="aasimarScourge">Aasimar, Scourge</option>
+                <option value="bugbear">Bugbear</option>
+                <option value="changeling">Changeling</option>
+                <option value="dragonborn">Dragonborn</option>
+                <option value="dwarfHill">Dwarf, Hill</option>
+                <option value="dwarfMountain">Dwarf, Mountain</option>
+                <option value="elfEladrin">Eladrin</option>
+                <option value="elfDark">Elf, Dark (Drow)</option>
+                <option value="elfHigh">Elf, High</option>
+                <option value="elfWood">Elf, Wood</option>
+                <option value="firbolg">Firbolg</option>
+                <option value="genasiAir">Genasi, Air</option>
+                <option value="genasiEarth">Genasi, Earth</option>
+                <option value="genasiFire">Genasi, Fire</option>
+                <option value="genasiWater">Genasi, Water</option>
+                <option value="gnomeDeep">Gnome, Deep</option>
+                <option value="gnomeForest">Gnome, Forest</option>
+                <option value="gnomeRock">Gnome, Rock</option>
+                <option value="goblin">Goblin</option>
+                <option value="goliath">Goliath</option>
+                <option value="halfElf">Half-Elf</option>
+                <option value="halfOrc">Half-Orc</option>
+                <option value="halflingGhostwise">Halfling, Ghostwise</option>
+                <option value="halflingLightfoot">Halfling, Lightfoot</option>
+                <option value="halflingStout">Halfling, Stout</option>
+                <option value="hobgoblin">Hobgoblin</option>
+                <option value="human" selected>Human</option>
+                <option value="humanVariant">Human, Variant</option>
+                <option value="kenku">Kenku</option>
+                <option value="kobold">Kobold</option>
+                <option value="lizardfolk">Lizardfolk</option>
+                <option value="orc">Orc</option>
+                <option value="shifterBeasthide">Shifter, Beasthide</option>
+                <option value="shifterCliffwalk">Shifter, Cliffwalk</option>
+                <option value="shifterLongstride">Shifter, Longstride</option>
+                <option value="shifterLongtooth">Shifter, Longtooth</option>
+                <option value="shifterRazorclaw">Shifter, Razorclaw</option>
+                <option value="shifterWildhunt">Shifter, Wildhunt</option>
+                <option value="tabaxi">Tabaxi</option>
+                <option value="tiefling">Tiefling</option>
+                <option value="tieflingFeral">Tiefling, Feral</option>
+                <option value="triton">Triton</option>
+                <option value="warforged">Warforged</option>
+                <option value="yuantiPureblood">Yuan-ti Pureblood</option>
+            </select></td>
+            </tr>
+        </table>
+        <table id="racial-mod-checkboxes">
+            <tr>
+                <th colspan="5">Select any two attributes:</th>
+            </tr>    
+            <tr>
+                <td class="racial-mod-label">STR</td>
+                <td><input type="checkbox" id="str-racial-mod-checkbox" class="racial-mod-checkbox-field" value="str"></td>
+                <td class="spacer">&nbsp;</td>
+                <td class="racial-mod-label">INT</td>
+                <td><input type="checkbox" id="int-racial-mod-checkbox"  class="racial-mod-checkbox-field" value="int"></td>
+            </tr>
+            <tr>
+                <td class="racial-mod-label">DEX</td>
+                <td><input type="checkbox" id="dex-racial-mod-checkbox" class="racial-mod-checkbox-field" value="dex"></td>
+                <td class="spacer">&nbsp;</td>
+                <td class="racial-mod-label">WIS</td>
+                <td><input type="checkbox" id="wis-racial-mod-checkbox"  class="racial-mod-checkbox-field" value="wis"></td>
+            </tr>
+            <tr>
+                <td class="racial-mod-label">CON</td>
+                <td><input type="checkbox" id="con-racial-mod-checkbox" class="racial-mod-checkbox-field" value="con"></td>
+                <td class="spacer">&nbsp;</td>
+                <td class="racial-mod-label" id="cha-racial-mod-label">CHA</td>
+                <td><input type="checkbox" id="cha-racial-mod-checkbox"  class="racial-mod-checkbox-field" value="cha"></td>
+            </tr>
+        </table>
+        </div>
+        </form>
+        <script src="js/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/point-buy-calculator.js"></script>
+
+    </body>
+</html>

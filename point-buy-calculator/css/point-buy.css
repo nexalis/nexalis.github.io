@@ -1,0 +1,154 @@
+input[type=text] {
+   padding: 0;
+   height: 2em;
+   width: 3em;
+   position: relative;
+   left: 0;
+   outline: none;
+   border: 1px solid #cdcdcd;
+   border-color: rgba(0,0,0,.15);
+   background-color: white;
+   font-size: 1.5em;
+   text-align: center;
+}
+
+label {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+table { 
+    border-spacing: 0.5em;
+    border-collapse: separate;
+    margin-top: 0.5em;
+    margin-bottom: 1.0em;
+}
+
+select {
+	font-size: 1.4em;
+	height: 1.7em;
+	width: 100%;
+	padding-left: 0.2em
+}
+
+th {
+	font-size: 1.5em;
+	text-align: center;
+}
+
+.attribute-headers {
+	vertical-align: bottom;
+}
+
+.attribute-headers > th {
+	font-size: 1.0em;
+}
+
+.spinner {
+	position: relative;
+	display: inline-block;
+	font-size: 1.5em;
+	padding: 0;
+	width: 4em;
+	height: 2em;
+	text-align: left;
+}
+
+.spinner > input[type=text] {
+	font-size: 1.0em;
+}
+
+.spinner-bar {
+	position: absolute;
+    font-size: 1.0em;
+	top: 0em;
+	left: 3em;
+	height: 2em;
+	width: 1em;
+	background: #999999;
+}
+
+.up-button {
+	position: absolute;
+    font-size: 1.0em;
+	top: 0em;
+	left: 0em;
+	height: 1em;
+	width: 1em;
+	background: #eeeeee url("images/arrow-up.png") no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.down-button {
+	position: absolute;
+    font-size: 1.0em;
+	top: 1.1em;
+	left: 0em;
+	height: 1em;
+	width: 1em;
+	background: #eeeeee url("images/arrow-down.png") no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+
+.attribute-score-field {
+	border: 2px solid red !important;
+}
+
+.attribute-modifier-field {
+	border: 2px solid red !important;
+}
+
+.operator {
+	padding-left: 0.3em;
+	padding-right: 0.3em;
+	font-weight: bold;
+}
+
+.racial-mod-label {
+	width: 1em;
+}
+
+.spacer {
+	width: 2em;
+}
+
+#content {
+	display: inline-block;
+}
+
+#race-table {
+	margin-bottom: 0.2em;
+}
+
+#race-label-cell {
+	text-align: left;
+	width: 10%;
+}
+
+#race-field-cell {
+	width: 100%
+}
+
+#race-field {
+	width: 80%;
+}
+
+#racial-mod-checkboxes {
+	margin-top: 0em;
+	display: none;
+}
+
+#racial-mod-checkboxes th {
+	font-size: 1.1em;
+}
+
+#points-available-div {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+#points-remaining-div {
+	display: inline-block;
+}
