@@ -128,8 +128,9 @@ ul {
 
 h2 {
 	color: #542437;
-	font: 400 48px/48px 'Abril Fatface', cursive;
-	text-shadow: 2px 2px 0px #ECD078, 3px 3px 1px #333;
+	font: 400 36px/36px 'Open Sans', sans-serif;
+  font-weight: bold;
+	text-shadow: 1px 1px 0px #ECD078, 2px 2px 1px #333;
 	padding: 20px 0 20px 0;
 	border-bottom: 2px solid #53777A;
 	margin: 0 0 20px 0;
